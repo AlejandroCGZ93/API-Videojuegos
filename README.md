@@ -1,7 +1,8 @@
 ##### API de Videojuegos
 
 --- Documentación ---
-\*Basado en la estructura MVC, la API de Videojuegos se divide en distintas carpetas que a continuación serán explicadas:
+
+*Basado en la estructura MVC, la API de Videojuegos se divide en distintas carpetas que a continuación serán explicadas:
 
 ·Controller: Contiene los endpoints de los cuales se realizan las solicitudes http desde el lado de cliente. Contiene videogame_controller donde se encuentra las solicitudes de tipo GET y Post respectivamente. Contiene funciones para realizar consultas a la Base de Datos sobre videojuegos, también tiene funciones que crea y
 devuelve las listas que el usuario crea y en los cuales se encuentra info de los juegos que el usuario agrega en dicha lista.
