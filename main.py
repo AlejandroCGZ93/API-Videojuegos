@@ -1,6 +1,6 @@
 # main.py
 from http.server import HTTPServer
-from controllers.videogame_controller import RequestHandler
+from controller.videogame_controller import RequestHandler
 from model.database_model import sqlite_db, Videojuego, Lista
 from model.management_videogames import ManagementVideogames
 

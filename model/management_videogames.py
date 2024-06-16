@@ -1,6 +1,6 @@
 # model/management_videogames.py
 from peewee import *
-from database_model import Videojuego, Lista
+from model.database_model import Videojuego, Lista
 from services.read_csv import read_csv
 
 class ManagementVideogames():
