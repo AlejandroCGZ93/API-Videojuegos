@@ -25,7 +25,7 @@ class Videojuego(BaseModel):
 
 class Lista(BaseModel):
     nombre = CharField()
-    videojuegos = TextField()
+    videojuegos = TextField() 
 
 # Crear las tablas si no existen
 sqlite_db.create_tables([Videojuego, Lista])
