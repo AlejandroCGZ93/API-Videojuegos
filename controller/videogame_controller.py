@@ -1,10 +1,19 @@
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 import json
-from model.database_model import Videojuego, Lista
 from peewee import fn
+from model.database_model import Videojuego, Lista
+from model.management_videogames import ManagementVideogames
 
 class RequestHandler(BaseHTTPRequestHandler):
+    @classmethod
+    def extraer_datos(cls):
+        return ManagementVideogames.data_extract()
+
+    @classmethod
+    def conectar_db(cls):
+        return ManagementVideogames.conectar_db()
+
     def _set_headers(self):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
