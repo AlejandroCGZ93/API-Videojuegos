@@ -19,8 +19,13 @@ main.py: Es el archivo que se utiliza para que la API se levante y funcione corr
 
 
 Busca los videojuegos por nombre y genero
+
 GET http://localhost:8000/search?nombre=Pokemon&genero=racing
+
 Crea la lista que el usuario desee con los juegos que desee
+
 POST http://localhost:8000/list
+
 Obtiene la lista que el usuario creo
+
 GET http://localhost:8000/list?nombre=Favoritos
