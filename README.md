@@ -16,3 +16,11 @@ Por otra parte management_videogames carga los datos necesarios del csv en la ba
 ·Services: Contiene el archivo read_csv que obtiene los datos del csv y realiza una limpieza de datos para mantener la base de datos normalizada.
 
 main.py: Es el archivo que se utiliza para que la API se levante y funcione correctamente.
+
+
+Busca los videojuegos por nombre y genero
+GET http://localhost:8000/search?nombre=Pokemon&genero=racing
+Crea la lista que el usuario desee con los juegos que desee
+POST http://localhost:8000/list
+Obtiene la lista que el usuario creo
+GET http://localhost:8000/list?nombre=Favoritos
