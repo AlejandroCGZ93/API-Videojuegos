@@ -1,5 +1,6 @@
 # model/database_model.py
 from peewee import *
+from datetime import datetime
 
 # Conexión a la base de datos
 sqlite_db = SqliteDatabase('videojuegos_.db', pragmas={'journal_mode': 'wal'}) 
@@ -25,7 +26,10 @@ class Videojuego(BaseModel):
 
 class Lista(BaseModel):
     nombre = CharField()
-    videojuegos = TextField() 
+    videojuegos = TextField()
+    fecha_creacion = DateTimeField(default=datetime.now)
+    fecha_modificacion = DateTimeField(default=datetime.now)
+    fecha_eliminacion = DateTimeField(null=True)
 
 # Crear las tablas si no existen
 sqlite_db.create_tables([Videojuego, Lista])
