@@ -31,6 +31,8 @@ class RequestHandler(BaseHTTPRequestHandler):
             self._handle_search(query)
         elif parsed_path.path == '/list':
             self._handle_list(query)
+        elif parsed_path.path == '/lists':
+            self._handle_all_lists()
         else:
             self.send_error(404, 'Not Found')
 
@@ -64,6 +66,13 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self.send_error(404, 'List not found')
         else:
             self.send_error(400, 'Bad Request')
+    
+    def _handle_all_lists(self):
+        lists = Lista.select()
+        response = [{'nombre': l.nombre, 'videojuegos': json.loads(l.videojuegos)} for l in lists]
+        self._set_headers()
+        self.wfile.write(json.dumps(response).encode())
+
 
     def do_POST(self):
         parsed_path = urlparse(self.path)
